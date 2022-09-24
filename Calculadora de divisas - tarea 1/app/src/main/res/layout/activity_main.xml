@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/darkBack">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:text=""/>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        >
+
+        <TableRow>
+            <EditText
+                android:id="@+id/text_name"
+                android:layout_height="40dp"
+                android:layout_span="2"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"/>
+            <Button
+                android:text="Ingresar Nombre"
+                android:onClick="setName"
+                android:id="@+id/btn_name"
+                android:backgroundTint="@color/green"
+                android:layout_width="wrap_content"
+                android:textSize="10dp"
+                android:padding="5dp"
+                android:textAllCaps="false"
+               />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/calc_values"
+                android:layout_height="100dp"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textAlignment="textEnd"
+                android:layout_span="3"
+                >
+            </TextView>
+        </TableRow>
+
+        <TableRow>
+            <View
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:layout_marginBottom="10dp"
+                android:layout_span="3"
+                >
+            </View>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/text1"
+                android:onClick="onClickNumber"
+                android:text="1"
+                android:backgroundTint="@color/green"
+                android:textSize="25dp"
+                android:width="100dp" />
+            <Button
+                android:id="@+id/text2"
+                android:onClick="onClickNumber"
+                android:text="2"
+                android:backgroundTint="@color/green"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"
+                android:width="100dp" />
+            <Button
+                android:id="@+id/text3"
+                android:onClick="onClickNumber"
+                android:text="3"
+                android:backgroundTint="@color/green"
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"
+                android:width="100dp" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/text4"
+                android:onClick="onClickNumber"
+                android:text="4"
+                android:backgroundTint="@color/green"
+                android:textSize="25dp"
+                android:width="100dp" />
+            <Button
+                android:id="@+id/text5"
+                android:onClick="onClickNumber"
+                android:text="5"
+                android:backgroundTint="@color/green"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"
+                android:width="100dp" />
+            <Button
+                android:id="@+id/text6"
+                android:onClick="onClickNumber"
+                android:text="6"
+                android:backgroundTint="@color/green"
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"
+                android:width="100dp" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/text7"
+                android:onClick="onClickNumber"
+                android:text="7"
+                android:backgroundTint="@color/green"
+                android:textSize="25dp"
+                android:width="100dp" />
+            <Button
+                android:id="@+id/text8"
+                android:onClick="onClickNumber"
+                android:text="8"
+                android:backgroundTint="@color/green"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"
+                android:width="100dp" />
+            <Button
+                android:id="@+id/text9"
+                android:onClick="onClickNumber"
+                android:text="9"
+                android:backgroundTint="@color/green"
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"
+                android:width="100dp" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/text0"
+                android:onClick="onClickNumber"
+                android:text="0"
+                android:backgroundTint="@color/green"
+                android:textSize="25dp"
+                android:width="100dp" />
+            <Button
+                android:id="@+id/textdot"
+                android:onClick="onClickNumber"
+                android:text="."
+                android:backgroundTint="@color/green"
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"
+                android:width="100dp" />
+            <Button
+                android:id="@+id/clear"
+                android:onClick="onClickClear"
+                android:text="CE"
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"
+                android:width="100dp"/>
+        </TableRow>
+
+        <TableRow android:layout_marginTop="20dp">
+            <Button
+                android:id="@+id/dop_usd"
+                android:onClick="onClickConvert"
+                android:text="DOP --> USD"
+                android:layout_span="3"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:enabled="false"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/usd_dop"
+                android:onClick="onClickConvert"
+                android:text="USD --> DOP"
+                android:layout_span="3"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:enabled="false"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/dop_eur"
+                android:onClick="onClickConvert"
+                android:text="DOP --> EUR"
+                android:layout_span="3"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:enabled="false" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/eur_dop"
+                android:onClick="onClickConvert"
+                android:text="EUR --> DOP"
+                android:layout_span="3"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:enabled="false"/>
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
