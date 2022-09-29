@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
         swipeListener = new SwipeListener(colorTable);
     }
 
-
+    public int calcularBilletes(int cant, int division) {
+        return cant / division;
+    }
 
     @Override
     public boolean onKey(View view, int keyCode, KeyEvent event) {
@@ -56,11 +58,11 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
             if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
 
                 try{
-                    int cantidad100= calcular(Integer.parseInt(txtCantidad.getText().toString()),100);
-                    int cantidad50 = calcular(Integer.parseInt(txtCantidad.getText().toString()),50);
-                    int cantidad20 = calcular(Integer.parseInt(txtCantidad.getText().toString()),20);
-                    int cantidad10 = calcular(Integer.parseInt(txtCantidad.getText().toString()),10);
-                    int cantidad5 =  calcular(Integer.parseInt(txtCantidad.getText().toString()),5);
+                    int cantidad100= calcularBilletes(Integer.parseInt(txtCantidad.getText().toString()),100);
+                    int cantidad50 = calcularBilletes(Integer.parseInt(txtCantidad.getText().toString()),50);
+                    int cantidad20 = calcularBilletes(Integer.parseInt(txtCantidad.getText().toString()),20);
+                    int cantidad10 = calcularBilletes(Integer.parseInt(txtCantidad.getText().toString()),10);
+                    int cantidad5 =  calcularBilletes(Integer.parseInt(txtCantidad.getText().toString()),5);
 
                     labelCantidad.setText("Billetes de 100: " + cantidad100 +
                                             "\nBilletes de 50: "+ cantidad50 +
@@ -76,13 +78,12 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
         return true;
     }
 
+    // Una clase privada para la implementación del swipe en la pantalla
     private class SwipeListener implements View.OnTouchListener{
 
         GestureDetector gestureDetector;
 
         SwipeListener(View view) {
-            int threshold = 100;
-            int velocity_threshold = 100;
 
         GestureDetector.SimpleOnGestureListener listener = new GestureDetector.SimpleOnGestureListener(){
             @Override
@@ -90,33 +91,36 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
                 return true;
             }
 
+            // Metodo para manejar los gestos en la pantalla (manejo del swipe)
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY){
 
-                float xDiff = e2.getX() - e1.getX();
-                float yDiff = e2.getY() - e1.getY();
+                float xDiff = e2.getX() - e1.getX(); // Diferencia en el eje x
+                float yDiff = e2.getY() - e1.getY(); // Diferencia en el eje y
 
+                // Si la diferencia en x es mayor a la diferencia en y es porque se
+                // hizo swipe a la izquierda o derecha
                 if(Math.abs(xDiff) > Math.abs(yDiff)){
 
-                    if(Math.abs(xDiff) > threshold && Math.abs(velocityX) > velocity_threshold){
-
+                        // El caso de un swipe a la derecha
                         if(xDiff > 0 && view.getId() == R.id.lsalir){
                             System.exit(0);
                         }
+                        // Swipe a la izquierda
                         else if(xDiff < 0 && view.getId() == R.id.lborrar){
                                 txtCantidad.setText("");
                                 labelCantidad.setText("");
                             }
-                        return true;
-                        }
                     }
                 else{
-                    if(Math.abs(yDiff) > threshold && Math.abs(velocityY) > velocity_threshold
-                        && view.getId()==R.id.table1){
+                    // En caso de swipe hacia abajo o hacia arriba
+
+                    if(view.getId()==R.id.table1){
 
                         Drawable d;
 
-                        if(xDiff > 0 ){
+                        // Swipe hacia arriba
+                        if(yDiff > 0 ){
                              d = getResources().getDrawable(R.drawable.gradient2);
                         }
                         else{
@@ -136,9 +140,5 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
         public boolean onTouch(View view, MotionEvent motionEvent){
             return gestureDetector.onTouchEvent(motionEvent);
         }
-    }
-
-    public int calcular(int cant, int division) {
-        return cant / division;
     }
 }
