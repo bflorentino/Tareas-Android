@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <TableLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:stretchColumns="*"
+            android:id="@+id/table1">
+
+            <TableRow>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    />
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/gray1"
+                    />
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/gray2"
+                    />
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/gray3"
+                    />
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/gray4"
+                    />
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/gray5"
+                    />
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/black"
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+        <RelativeLayout
+            android:layout_height="270dp"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/table1"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/rl1"
+            >
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="240dp"
+                android:id="@+id/imagenitla"
+                android:src="@drawable/itla"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imagenitla"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_height="180dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Ingrese un número para calcular los billetes"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/labelCant" />
+
+                <EditText
+                    android:layout_height="40dp"
+                    android:layout_width="150dp"
+                    android:id="@+id/textCant"
+                    android:hint="Cantidad"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/rl1"
+            android:id="@+id/rl2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:id="@+id/lsalir"
+                android:background="@color/gray2"
+                android:paddingTop="30dp"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/swipeRight"
+                    android:text="Salir"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingLeft="100dp"
+                    android:textSize="25dp"
+                    />
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imagenitl"
+                    android:src="@drawable/swipe"
+                    android:scaleType="fitXY"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/lsalir"
+                android:id="@+id/lborrar"
+                android:layout_marginTop="6dp"
+                android:paddingLeft="100dp"
+                android:paddingTop="30dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/gray1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/swipeLeft"
+                android:text="Borrar"
+                android:textSize="25dp"
+                android:textAlignment="center"
+                />
+            <ImageView
+                android:layout_height="50dp"
+                android:layout_width="50dp"
+                android:src="@drawable/swipel"
+                />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
