@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layoutprincipal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rlinfo">
+
+            <TextView
+                android:text="Bryan Xavier Florentino Montero"
+                android:width="180dp"
+                android:id="@+id/myname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="12dp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="Ver Info"
+                android:layout_marginLeft="3dp"
+                android:backgroundTint="@color/blue"
+                android:onClick="onClickViewInfo"
+                android:id="@+id/btnInfo"
+                android:textSize="12dp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="Editar Info"
+                android:backgroundTint="@color/green"
+                android:layout_marginLeft="5dp"
+                android:textSize="12dp"
+                android:id="@+id/btnEditInfo"
+                android:onClick="onClickEditInfo"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:layout_marginTop="25dp"
+            android:paddingVertical="5dp"
+            android:text="Elegir Imagen"
+            android:backgroundTint="@color/orange"
+            android:id="@+id/btnSeleccionar"
+            android:onClick="onClick"
+            android:textSize="12dp"
+            android:layout_below="@+id/rlinfo"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:paddingHorizontal="5dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="fitXY"
+            android:background="#ccc"
+            android:id="@+id/imagenSel"
+            android:layout_below="@id/btnSeleccionar"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imagenSel"
+            android:gravity="center_horizontal"
+            android:text="Swipe hacia arriba para salir"
+            />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
