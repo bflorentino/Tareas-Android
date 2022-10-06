@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
     String materia = "Introducción al Desarrollo de aplicaciones móviles";
     String instituto = "Instituto Tecnológico de las Américas";
 
+    // Las imágenes
     int[] images = {R.drawable.musica,
                     R.drawable.calle,
                     R.drawable.persona,
                     R.drawable.carro,
-
                     R.drawable.callemusica,
                     R.drawable.personamusica,
                     R.drawable.carromusica,
@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
         swipeListener = new SwipeListener(rlprincipal);
     }
 
-    public void onClick (View view){
+    // Eleccion de imagen a presentar
+    public void onClickSelectImg (View view){
 
         AlertDialog.Builder altImages = new AlertDialog.Builder(MainActivity.this);
 
@@ -137,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    // Alerta personalizada para visualizar la información
     public void onClickViewInfo(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
@@ -161,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    // Alerta personalizada para editar la informacion
     public void onClickEditInfo(View view){
 
         alertEditInfo = getLayoutInflater().inflate(R.layout.alert_edit_info, null);
