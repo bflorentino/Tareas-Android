@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertEventoActivity"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Registrar Nuevo evento" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/insertarTituloText"
+        android:hint="Título del evento"
+        />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:id="@+id/insertarCuerpoText"
+        android:hint="Descripción del evento"
+        />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:id="@+id/insertarFecha"
+        android:focusable="false"
+        android:hint="Fecha del evento"
+        android:clickable="true"
+        android:inputType="date"
+        android:onClick="onSelectDate"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Guardar"
+        android:backgroundTint="@color/blue"
+        android:id="@+id/btnInsertar"
+        android:onClick="onClickInsertar"
+        />
+
+</LinearLayout>

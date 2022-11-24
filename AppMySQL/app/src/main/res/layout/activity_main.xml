@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="10dp"
+            android:text="Eventos del dia"
+            android:backgroundTint="@color/blue"
+            android:id="@+id/btnHoy"
+            android:layout_marginTop="15dp"
+            android:onClick="getEventos"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="10dp"
+            android:text="Ver todos"
+            android:backgroundTint="@color/orange"
+            android:id="@+id/btnTodos"
+            android:layout_marginTop="15dp"
+            android:onClick="getEventos"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="10dp"
+            android:backgroundTint="@color/green"
+            android:text="Nuevo Evento"
+            android:layout_marginTop="15dp"
+            android:onClick="onClickNuevoEvento"
+            />
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/listaEventos" />
+
+</LinearLayout>
